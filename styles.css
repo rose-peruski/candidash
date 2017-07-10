@@ -1,6 +1,6 @@
 body{
 	background-color: #ffe5cc;
-
+	text-align: center;
 }
 
 .election, .money, .canvassing, .communication{
@@ -11,4 +11,5 @@ body{
     width: calc(25% - 10px);
     height:400px;
     background-color: lightgrey;
+		text-align: center;
 }
