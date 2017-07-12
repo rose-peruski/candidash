@@ -61,6 +61,7 @@
         authorizeButton.style.display = 'none';
         signoutButton.style.display = 'block';
         listMajors();
+        listCanvassers();
       } else {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
@@ -93,13 +94,14 @@
       pre.appendChild(textContent);
     }
 
+
     /**
      * get info from spreadsheet
      */
     function listMajors() {
       gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: '15Tvpy7CqfH33BZ18CYRI2fYOR-P5yaxZDVzZNdZ2W6Q',
-        range: 'Sheet1!A:A',
+        range: 'Sheet1!A1:C7',
       }).then(function(response) {
         var range = response.result;
         if (range.values.length > 0) {
@@ -107,7 +109,7 @@
           for (i = 0; i < range.values.length; i++) {
             var row = range.values[i];
             // Print columns A and E, which correspond to indices 0 and 4.
-            appendPre(row[0]);
+            appendPre(row[0] + ' ' + row[1] + ' ' + row [2] + '\n');
             //appendPre(row[0] + ', ' + row[4]);
           }
         } else {
@@ -115,6 +117,35 @@
         }
       }, function(response) {
         appendPre('Error: ' + response.result.error.message);
+      });
+    }
+
+    function appendPre2(message) {
+      var pre2 = document.getElementById('canvass');
+      var textContent2 = document.createTextNode(message + '\n');
+      pre2.appendChild(textContent2);
+    }
+
+    function listCanvassers() {
+      gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: '15Tvpy7CqfH33BZ18CYRI2fYOR-P5yaxZDVzZNdZ2W6Q',
+        range: 'Sheet2!A1:C3',
+      }).then(function(response) {
+        var range = response.result;
+        console.log(range);
+        if (range.values.length > 0) {
+          // appendPre2('Item, Money In, Money Out');
+          for (i = 0; i < range.values.length; i++) {
+            var row = range.values[i];
+            // Print columns A and E, which correspond to indices 0 and 4.
+            appendPre2(row[0] + ' ' + row[1] + ' ' + row [2]);
+            //appendPre(row[0] + ', ' + row[4]);
+          }
+        } else {
+          appendPre2('No data found.');
+        }
+      }, function(response) {
+        appendPre2('Error: ' + response.result.error.message);
       });
     }
 
@@ -133,7 +164,7 @@
     <h3>Show Me the Money</h3>
   </div>
 <p></p>
-  <div class="canvassing">
+  <div class="canvassing" id="canvass">
     <h3>Canvassing</h3>
 
   </div>
