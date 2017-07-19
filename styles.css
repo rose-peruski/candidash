@@ -1,15 +1,30 @@
 body{
-	background-color: mediumblue;
+	background-color: #0099D0;
 	text-align: center;
+
 }
 
-.election, .money, .canvassing, .communication{
+h1 {
+	color: #C7DAE9;
+}
+.election, .money {
     display:inline-block;
     position: relative;
     margin: 5px;
     float:left;
-    width: calc(25% - 10px);
+    width: calc(45% - 10px);
     height:400px;
     background-color: lightgrey;
 		text-align: center;
+}
+
+.canvassing, .communication {
+	display:inline-block;
+	position: relative;
+	margin: 5px;
+	float:left;
+	width: calc(45% - 10px);
+	height:400px;
+	background-color: lightgrey;
+	text-align: center;
 }
