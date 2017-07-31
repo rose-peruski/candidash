@@ -18,14 +18,25 @@ h1 {
 		text-align: center;
 }
 
-.canvassing, .communication {
+.canvassing {
 	display:inline-block;
 	position: relative;
 	margin: 5px;
 	float:left;
 	width: calc(45% - 10px);
-	height:400px;
+	height:450px;
 	background-color: lightgrey;
+	text-align: center;
+}
+
+.map {
+	display:inline-block;
+	position: relative;
+	margin: 5px;
+	float:left;
+	width: calc(45% - 10px);
+	height:450px;
+	
 	text-align: center;
 }
 
