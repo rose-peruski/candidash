@@ -14,10 +14,10 @@ function callback(data){
         }
         rows.push(rowObj);
     }
-    $('#showme').append(JSON.stringify(rows));
+
     // var raw = JSON.stringify(rows);
     for(i=0; i<rows.length; i++){
-      console.log(i+ " " +rows[i].item + " ")
+      $('#showme').append((i+ 1) + ". " +rows[i].item + " " + rows[i].income + " " + rows[i].expenses + "<br>")
     }
     // var raw = document.createElement('p');
     // raw.innerText = JSON.stringify(rows);
