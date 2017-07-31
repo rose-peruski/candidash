@@ -13,7 +13,7 @@ h1 {
     margin: 5px;
     float:left;
     width: calc(45% - 10px);
-    height:400px;
+    height:450px;
     background-color: lightgrey;
 		text-align: center;
 }
@@ -29,7 +29,7 @@ h1 {
 	text-align: center;
 }
 
-#tableMoney {
+#tableMoney, #tableVols {
 		margin: auto;
 		display: inline-table;
 

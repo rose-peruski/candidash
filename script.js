@@ -75,9 +75,7 @@ function callback2(data2){
             +"<td>"+value.call+"</td>"
         +"</tr>" );
 });
-    // for(i=0; i<rows2.length; i++){
-    //   $('#canvass').append((i+ 1) + ". " +rows2[i].name + " " + rows2[i].walk + " " + rows2[i].call + "<br>")
-    // }
+
  }
 
 $(document).ready(function(){
@@ -101,5 +99,5 @@ $(document).ready(function() {
   var days = Math.floor(countdownTime / (1000 * 60 * 60 * 24));
     var hours = Math.floor((countdownTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-$('.election').append("<p>" + days+ " days " + hours + " hours till polls open!</p>")
+$('#election').append("<p>" + days+ " days " + hours + " hours till polls open!</p>")
 });
