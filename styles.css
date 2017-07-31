@@ -28,3 +28,9 @@ h1 {
 	background-color: lightgrey;
 	text-align: center;
 }
+
+#tableMoney {
+		margin: auto;
+		display: inline-table;
+
+  }

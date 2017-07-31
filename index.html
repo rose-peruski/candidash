@@ -83,73 +83,6 @@
       gapi.auth2.getAuthInstance().signOut();
     }
 
-    /**
-     * Append a pre element to the body containing the given message
-     * as its text node. Used to display the results of the API call.
-     *
-     * @param {string} message Text to be placed in pre element.
-     */
-    // function appendPre(message) {
-    //   var pre = document.getElementById('showme');
-    //   var textContent = document.createTextNode(message + '\n');
-    //   pre.appendChild(textContent);
-    // }
-    //
-    //
-    // /**
-    //  * get info from spreadsheet
-    //  */
-    // function listMajors() {
-    //   gapi.client.sheets.spreadsheets.values.get({
-    //     spreadsheetId: '15Tvpy7CqfH33BZ18CYRI2fYOR-P5yaxZDVzZNdZ2W6Q',
-    //     range: 'Sheet1!A1:C7',
-    //   }).then(function(response) {
-    //     var range = response.result;
-    //     if (range.values.length > 0) {
-    //       appendPre('Item Money In Money Out\n');
-    //       for (i = 0; i < range.values.length; i++) {
-    //         var row = range.values[i];
-    //         // Print columns A and E, which correspond to indices 0 and 4.
-    //         appendPre('\n' + row[0] + ' ' + row[1] + ' ' + row [2]);
-    //         //appendPre(row[0] + ', ' + row[4]);
-    //       }
-    //     } else {
-    //       appendPre('No data found.');
-    //     }
-    //   }, function(response) {
-    //     appendPre('Error: ' + response.result.error.message);
-    //   });
-    // }
-    //
-    // function appendPre2(message) {
-    //   var pre2 = document.getElementById('canvass');
-    //   var textContent2 = document.createTextNode(message + '\n');
-    //   pre2.appendChild(textContent2);
-    // }
-    //
-    // function listCanvassers() {
-    //   gapi.client.sheets.spreadsheets.values.get({
-    //     spreadsheetId: '15Tvpy7CqfH33BZ18CYRI2fYOR-P5yaxZDVzZNdZ2W6Q',
-    //     range: 'Sheet2!A1:C3',
-    //   }).then(function(response) {
-    //     var range = response.result;
-    //     console.log(range);
-    //     if (range.values.length > 0) {
-    //       // appendPre2('Item, Money In, Money Out');
-    //       for (i = 0; i < range.values.length; i++) {
-    //         var row = range.values[i];
-    //         // Print columns A and E, which correspond to indices 0 and 4.
-    //         appendPre2(row[0] + ' ' + row[1] + ' ' + row [2]);
-    //         //appendPre(row[0] + ', ' + row[4]);
-    //       }
-    //     } else {
-    //       appendPre2('No data found.');
-    //     }
-    //   }, function(response) {
-    //     appendPre2('Error: ' + response.result.error.message);
-    //   });
-    // }
-
   </script>
 
   <script async defer src="https://apis.google.com/js/api.js"
@@ -163,6 +96,18 @@
 
   <div class="money" id="showme">
     <h3>Show Me the Money</h3>
+    <p id="moneyTotal">
+
+    </p>
+
+    <table id="tableMoney">
+    <tr>
+        <th>Item</th>
+        <th>Income</th>
+        <th>Expenses</th>
+    </tr>
+    <div id='data'/>
+</table>
   </div>
 <p></p>
   <div class="canvassing" id="canvass">

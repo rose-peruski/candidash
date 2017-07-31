@@ -15,13 +15,27 @@ function callback(data){
         rows.push(rowObj);
     }
 
-    // var raw = JSON.stringify(rows);
-    for(i=0; i<rows.length; i++){
-      $('#showme').append((i+ 1) + ". " +rows[i].item + " " + rows[i].income + " " + rows[i].expenses + "<br>")
-    }
-    // var raw = document.createElement('p');
-    // raw.innerText = JSON.stringify(rows);
-    // document.body.appendChild(raw);
+
+    // for(i=0; i<rows.length; i++){
+    //   $('#showme').append((i+ 1) + ". " +rows[i].item + " " + rows[i].income + " " + rows[i].expenses + "<br>")
+    // }
+    length = rows.length-1;
+
+    var total = rows[length].income - rows[length].expenses;
+
+    $('#moneyTotal').append("Money available: " + total);
+
+    // for(i=0; i<rows.length; i++){
+    //   $('#canvass').append((i+ 1) + ". " +rows[i].name + " " + rows[i].walk + " " + rows[i].call + "<br>")
+    // }
+    $.each( rows, function( key, value ) {
+      $("#tableMoney").append(
+        "<tr>"
+            +"<td>"+value.item+"</td>"
+            +"<td>"+value.income+"</td>"
+            +"<td>"+value.expenses+"</td>"
+        +"</tr>" );
+});
 }
 
 $(document).ready(function(){
